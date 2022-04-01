@@ -30,6 +30,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.humanize',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    'crispy_forms',
+    'crispy_tailwind',
+
     'core',
     'social',
     'tailwind',
@@ -42,6 +52,17 @@ INTERNAL_IPS = [
 ]
 
 NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS="tailwind"
+CRISPY_TEMPLATE_PACK = 'tailwind'
+
+SITE_ID = 1
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 
 MIDDLEWARE = [
