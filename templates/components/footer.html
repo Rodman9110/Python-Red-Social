@@ -15,9 +15,9 @@
   <a href="#">Cookies</a>
   <span>.</span>
 
-  {% comment %} {% if user.is_authenticated %}
-  <a class="hover:underline" href="{% url 'account_logout' %}">Logout</a>
-  {% endif %} {% endcomment %}
+  {% if user.is_authenticated %}
+    <a class="hover:underline" href="{% url 'account_logout' %}">Logout</a>
+  {% endif %}
 
 
   <p class="cursor-default text-xs text-gray-100 dark:text-dark-txt">Sachsen Cob&uumlrg Gotha &copy; 2021</p>

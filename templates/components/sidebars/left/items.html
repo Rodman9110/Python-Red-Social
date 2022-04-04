@@ -2,9 +2,9 @@
 
 <ul class="p-4">
   <li>
-      <a href="#" class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-lg transition-all dark:text-dark-txt dark:hover:bg-dark-third">
-          <img src="https://media-exp1.licdn.com/dms/image/C4D03AQFgUbelMja1vw/profile-displayphoto-shrink_200_200/0/1518110948370?e=1654128000&v=beta&t=vYrW3jR6vBv1ktj6JnhC-I5wChBo_SlMbG-lyMt2X6o" alt="Profile picture" class="w-10 h-10 rounded-full">
-          <span class="font-semibold">Tran Anh Tuat</span>
+      <a href="{% url 'users:profile' user.username %}" class="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-lg transition-all dark:text-dark-txt dark:hover:bg-dark-third">
+          <img src="{{user.profile.picture.url}}" class="w-10 h-10 rounded-full">
+          <span class="font-semibold">{{user.username}}</span>
       </a>
   </li>
   <li>

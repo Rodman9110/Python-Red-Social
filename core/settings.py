@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'core',
     'social',
+    'accounts',
     'tailwind',
     'theme',
 ]
@@ -63,6 +64,19 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+
+#============================= ALLAUTH =============================#
+ACCOUNT_ALLOW_REGISTRATION = env.bool("DJANGO_ACCOUNT_ALLOW_REGISTRATION",True)
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_UNIQUE = True
+AUTH_USER_MODEL="accounts.User"
+ACCOUNT_LOGOUT_ON_GET= True
+ACCOUNT_EMAIL_VERIFICATION="mandatory"
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT=3
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT=300
+LOGIN_REDIRECT_URL="/"
+LOGIN_URL="account_login"
 
 
 MIDDLEWARE = [
@@ -117,7 +131,7 @@ PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
     'django.contrib.auth.hashers.Argon2PasswordHasher',
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
-    'django.contrib.auth.hashers.ScryptPasswordHasher',
+    # 'django.contrib.auth.hashers.ScryptPasswordHasher',
 ]
 
 
